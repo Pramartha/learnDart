@@ -90,6 +90,7 @@ void main() {
 
   variable = 100;
   print(variable);
+  print(contoh);
 
   variable = true;
   print(variable);
