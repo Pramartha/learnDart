@@ -40,13 +40,36 @@ class Person {
   /// Initializin Formal Parameter
   /// Terkadang saat membuat constructor kita ingin membuat parameter yang hanya bisa digunakan untuk mengubah nilai yang ada di dalam field, maka bisa menggunakan Formal Parameter
   /// Formal Parameter hanya bisa digunakan di constructor, tidak bisa di method
-  /// NB : Comment bagian constructor!
+  /// NB :
+  ///   Comment bagian constructor!
+  ///   Jika tidak ada body tanda kurung kurawal ({}) bisa diganti dengan titik koma (;)
 
   Person(this.name, this.address);
+
+  /// Named Constructor
+  /// Di dart constructor hanya bisa dibuat satu kali saja, karena di dart tidak ada istilah overloading
+  /// Tetapi terdapat cara untuk dapat membuat lebih deri satu constructor yaitu dengan menggunakan Named Constructor
+  /// Sintaks :
+  /// className.namedConstructor {}
+  /// NB :
+  ///   Nama constructor tidak boleh sama
+  ///   Jika tidak ada body tanda kurung kurawal ({}) bisa diganti dengan titik koma (;)
+  ///   Jika menggunakan Named Consttructor dan mengambil value yang tidak ada di named constructor namun ada di field maka akan menggunakan nilai dari field
+  Person.withName(this.name);
+  Person.withAddress(this.address);
 }
 
 void main() {
   Person person1 = Person("Karin", "Jawa");
   print(person1.name);
   print(person1.address);
+
+  //Mengakses Named Constructor
+  Person person2 = Person.withName("Jokowi");
+  print(person2.name);
+  print(person2.address);
+
+  Person person3 = Person.withAddress("Jl. Imam Bondjol");
+  print(person3.name);
+  print(person3.address);
 }
