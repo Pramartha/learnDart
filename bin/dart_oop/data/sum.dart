@@ -9,6 +9,9 @@ class Sum {
   count() => first + second;
 }
 
+typedef Jumlah = Sum;
+typedef Total = Sum;
+
 void main(List<String> args) {
   //Callable Class
   /**
